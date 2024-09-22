@@ -27,7 +27,6 @@ let home = document.getElementById("main");
 logbtn.addEventListener("click", function(){
     if (window.getComputedStyle(logBox).display === "none") {
         logBox.style.display = "block";
-        // registerBox.style.display = "none";
         home.style.opacity=0.1;
         logBox.style.zIndex = 999;
         navigation.style.opacity=0.2;
@@ -42,7 +41,6 @@ registerBtn.addEventListener("click",function(){
         registerBox.style.display = "block";
         registerBox.style.zIndex = 999;
         home.style.opacity=0.1;
-        // home.style.display="none";
         logBox.style.display = "none";
         navigation.style.opacity=0.2;
     }
@@ -51,30 +49,10 @@ registerBtn.addEventListener("click",function(){
     }
 });
 
-// let btnC = document.querySelectorAll(".btncancel");
-// btnC.forEach(function(button){
-//     btnC.addEventListener("click", function(){
-//         if(home.style.display === "none") {
-//             home.style.display = "block";
-//             registerBox.style.display = "none";
-//             // registerBox.style.zIndex = -1;
-//             logBox.style.display = "none";
-//             home.style.opacity = 1;
-//             navigation.style.opacity = 1;
-//             ticketBox.style.display = "none";
-//         }
-//         else{
-//             home.style.display = "block";
-//         }
-//     });
-// })
-
 btncancel.addEventListener("click",function(){
     if(home.style.opacity == "0.1" || home.style.display === ""){
-        // if(window.getComputedStyle(home).opacity === "0.1" || home.style.display === ""){
         home.style.display = "block";
         registerBox.style.display = "none";
-        // registerBox.style.zIndex = -1;
         logBox.style.display = "none";
         home.style.opacity = 1;
         navigation.style.opacity = 1;
@@ -92,8 +70,6 @@ buybtn.forEach(function(button){
     button.addEventListener("click",function(){
         // console.log("hello");
         if(ticketBox.style.display === "none" || ticketBox.style.display === ""){
-            // button.style.position = "absolute";
-            // button.appendChild(ticketBox);
             ticketBox.style.display = "block";
             ticketBox.style.zIndex = 999;
             home.style.opacity=0.1;
@@ -105,27 +81,9 @@ buybtn.forEach(function(button){
     });
 });
 
-// let bookBtn = document.getElementById("book-btn");
-// let ticketBox = document.getElementById("ticket-section");
-
-// bookBtn.addEventListener("click",function(){
-//     // console.log("hello");
-//     if(ticketBox.style.display === "none" || ticketBox.style.display === ""){
-//         ticketBox.style.display = "block";
-//         ticketBox.style.zIndex = 999;
-//         home.style.opacity=0.1;
-//         navigation.style.opacity=0.2;
-//     }
-//     else{
-//         ticketBox.style.display = "none";
-//     }
-// });
-
-
 let bookcancel = document.getElementById("book-cancel");
 bookcancel.addEventListener("click",function(){
     if(home.style.opacity == "0.1" || home.style.display === ""){
-        // if(window.getComputedStyle(home).opacity === "0.1" || home.style.display === ""){
         home.style.display = "block";
         home.style.opacity = 1;
         navigation.style.opacity = 1;
@@ -136,3 +94,10 @@ bookcancel.addEventListener("click",function(){
     }
 });
 
+setTimeout(function(){
+    var messageDiv = document.getElementById('success-message');
+    if (messageDiv) {
+        messageDiv.style.display="none";
+    }     
+    
+},5000);

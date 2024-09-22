@@ -1,3 +1,13 @@
+<?php 
+    session_start(); // Start the session at the top of index.php
+
+    // Check if there's a success message in the session
+    if (isset($_SESSION['message'])) {
+        echo "<div id='success-message' style='color: green;'>" . $_SESSION['message'] . "</div>";
+        unset($_SESSION['message']); // Clear the message after displaying it
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,14 +25,17 @@
                 <div class="lheading">
                     <h1>Log In</h1>
                 </div>
-                <div class="inputs">
-                    <input type="email" placeholder="Email Id"><br><br>
-                    <input type="password" placeholder="password"><br>
-                </div>
-                <div class="btns">
-                    <button id="loginbtn">Log In</button>
-                </div>
-                <span>Do not Have An Account? Then</span><button id="register-btn"> Register Here!</a>
+                <form action="action.php" method="post" role="form" id="login-form" name="login-form">
+                    <div class="inputs">
+                        <input type="email" name="email" placeholder="Email Id"><br><br>
+                        <input type="password" name="pass" placeholder="password"><br>
+                    </div>
+                    <div class="btns">
+                        <!-- <button id="loginbtn" value="login" name="login">Log In</button> -->
+                        <button id="loginbtn" name="login">Log In</button>
+                    </div>
+                    <span>Do not Have An Account? Then</span><a id="register-btn"> Register Here!</a>
+                </form>
             </div>
         </div>
 
@@ -31,17 +44,21 @@
                 <div class="rheading">
                     <h1>Register</h1>
                 </div>
-                <div class="inputs">
-                    <input type="text" placeholder="Name"><br><br>
-                    <input type="Mobile number" placeholder="Mobile Number"><br><br>
-                    <input type="email" placeholder="Email Id"><br><br>
-                    <input type="password" placeholder="password"><br><br>
-                </div>
-                <div class="btns">
-                    <button id="btnprocess">Register</button>
-                    <!-- <button id="btncancel">cancel</button> -->
-                    <button id="btncancel">cancel</button>
-                </div>
+                <form action="action.php" method="post" role="form" id="register-form" name="register-form">
+                    <div class="inputs">
+                        <input type="text" placeholder="Name" name="name"><br><br>
+                        <input type="tel" placeholder="Mobile Number" name="mo_no"><br><br>
+                        <input type="email" placeholder="Email Id" name="email"><br><br>
+                        <input type="password" placeholder="password" name="pass"><br><br>
+                    </div>
+                    <div class="btns">
+                        <!-- <a href="action.php" id="btnprocess" value="register" name="register">Register</button> -->
+                        <button id="btnprocess" name="register" value="register">Register</button>
+                        <!-- <button id="btncancel">cancel</button> -->
+                        
+                        <button type="none" id="btncancel" name="cancel">cancel</button>
+                </form>
+                    </div>
             </div>
         </div>
 

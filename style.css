@@ -695,9 +695,13 @@ input::placeholder{
     width: 120px;
     font-size: 18px;
     font-weight: 600;
-    padding: 10px;
+    /* padding: 10px; */
     border: none;
     border-radius: 10px;
+    margin-left: 200px;
+    /* position: absolute;
+    top: -20%;
+    left: -50%; */
 }
 #btncancel:hover{
     background-color: rgb(75, 18, 18);
